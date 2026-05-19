@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+<title>TO-DO LIST</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-orange-200 flex items-center justify-center min-h-screen p-4">
+    <div id="container" class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-sm sm:max-w-md mx-4">
+        <h2 class="text-2xl font-black text-pink-400 mb-6 text-center tracking wide uppercase">MY TASKS</h2>
+       <form id="toDoList" class="flex gap-2">
+           <input type="text" id="inputTask" placeholder="what are you doing today?"
+           class="w-full flex-1 min-w-0 px-3 py-2 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-200 text-gray-700 sm:text-base transition duration-150">
+           <button type="submit" 
+           class="bg-orange-200 hover:bg-orange-300 text-gray-800 font-bold px-5 py-2 rounded-xl transition duration-200 shadow-md hover:shadow-lg cursor-pointer">Add Task</button>
+       </form>
+       <div id="errorMSG" class="text-red-500 mt-2 text-sm font-semibold h-5 pl-1"></div>
+       <ul id="taskList" class="mt-4  space-y-2 text text-gray-800 list-disc pl-6"></ul>
+    </div>
+</body>
+<script>
+const toDoList = document.getElementById("toDoList");
+const inputTask = document.getElementById("inputTask");
+const taskList = document.getElementById("taskList");
+const errorMSG = document.getElementById("errorMSG");
+toDoList.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const taskText = inputTask.value.trim();
+    if (!taskText) {
+        errorMSG.textContent = "Please enter a task.";
+        return;
+    }
+    errorMSG.textContent = "";
+    const newLi = document.createElement("li");
+    newLi.textContent = taskText;
+    taskList.appendChild(newLi);
+    inputTask.value = "";
+})
+</script>
+</html>
