@@ -9,7 +9,7 @@ The interface centers an elegant, high-contrast dashboard card over a warm paste
 ## 🌐 Live Demo
 
 See the application live in action and interact with it here:  
-👉 **[Launch Live Application 🚀](https://wid-to-do-list.vercel.app/)**
+👉 **Launch Live Application 🚀:** https://wid-to-do-list.vercel.app/
 
 ---
 
